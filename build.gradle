@@ -33,7 +33,7 @@ shadowJar {
 }
 
 dependencies {
-    api 'com.github.retrooper:packetevents:api-b0740e7af7-1'
+    implementation 'com.github.retrooper:packetevents:api-SNAPSHOT'
     compileOnly 'org.jetbrains:annotations:22.0.0'
 
     compileOnly 'org.spigotmc:spigot-api:1.18-R0.1-SNAPSHOT'
