@@ -22,7 +22,6 @@ import com.github.retrooper.packetevents.PacketEvents;
 import com.github.retrooper.packetevents.event.SimplePacketListenerAbstract;
 import com.github.retrooper.packetevents.event.simple.PacketPlayReceiveEvent;
 import com.github.retrooper.packetevents.event.simple.PacketPlaySendEvent;
-import com.github.retrooper.packetevents.protocol.item.ItemStack;
 import com.github.retrooper.packetevents.protocol.packettype.PacketType;
 import com.github.retrooper.packetevents.protocol.particle.Particle;
 import com.github.retrooper.packetevents.protocol.particle.type.ParticleTypes;
@@ -38,15 +37,11 @@ import com.github.retrooper.packetevents.wrapper.play.client.WrapperPlayClientPl
 import com.github.retrooper.packetevents.wrapper.play.client.WrapperPlayClientPlayerDigging;
 import com.github.retrooper.packetevents.wrapper.play.client.WrapperPlayClientPlayerFlying;
 import com.github.retrooper.packetevents.wrapper.play.server.WrapperPlayServerParticle;
-import com.github.retrooper.packetevents.wrapper.play.server.WrapperPlayServerWindowItems;
 import io.github.retrooper.packetevents.factory.spigot.SpigotPacketEventsBuilder;
 import io.github.retrooper.packetevents.utils.GeyserUtil;
 import io.github.retrooper.packetevents.utils.SpigotDataHelper;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
-
-import java.util.List;
-import java.util.Optional;
 
 public class PacketEventsPlugin extends JavaPlugin {
     @Override
@@ -108,8 +103,7 @@ public class PacketEventsPlugin extends JavaPlugin {
                     } else {
                         event.getUser().sendMessage("player null, but hey!!!");
                     }
-                }
-                else if (event.getPacketType() == PacketType.Play.Server.ENTITY_EFFECT) {
+                } else if (event.getPacketType() == PacketType.Play.Server.ENTITY_EFFECT) {
                     event.getUser().sendMessage("Cope!");
                 }
             }
