@@ -104,9 +104,11 @@ public class PacketDecoderModern extends ByteToMessageDecoder {
                 try {
                     for (ByteToMessageDecoder decoder : decoders) {
                         //Only support one output object
-                        Object input = out.get(0);
-                        out.clear();
-                        out.addAll(CustomPipelineUtil.callDecode(decoder, ctx, input));
+                        if (!out.isEmpty()) {
+                            Object input = out.get(0);
+                            out.clear();
+                            out.addAll(CustomPipelineUtil.callDecode(decoder, ctx, input));
+                        }
                     }
                 } catch (InvocationTargetException e) {
                     e.printStackTrace();
@@ -115,9 +117,11 @@ public class PacketDecoderModern extends ByteToMessageDecoder {
             if (mcDecoder != null) {
                 //Call minecraft decoder to convert the ByteBuf to an NMS object for the next handlers
                 try {
-                    Object input = out.get(0);
-                    out.clear();
-                    out.addAll(CustomPipelineUtil.callDecode(mcDecoder, ctx, input));
+                    if (!out.isEmpty()) {
+                        Object input = out.get(0);
+                        out.clear();
+                        out.addAll(CustomPipelineUtil.callDecode(mcDecoder, ctx, input));
+                    }
                 } catch (InvocationTargetException e) {
                     e.printStackTrace();
                 }

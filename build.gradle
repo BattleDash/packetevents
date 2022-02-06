@@ -66,6 +66,13 @@ tasks.withType(JavaCompile) {
     options.encoding = 'UTF-8'
 }
 
+//So that SNAPSHOT is always the latest SNAPSHOT
+configurations.all {
+    resolutionStrategy.cacheDynamicVersionsFor 0, 'seconds'
+}
+
+//So we only produce one jar with shadowJar. No suffixes. Just replace what the original jar would be named.
+
 tasks.jar.configure {
     classifier = 'default'
 }
