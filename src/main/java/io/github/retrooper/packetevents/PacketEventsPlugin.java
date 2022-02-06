@@ -103,8 +103,6 @@ public class PacketEventsPlugin extends JavaPlugin {
                     } else {
                         event.getUser().sendMessage("player null, but hey!!!");
                     }
-                } else if (event.getPacketType() == PacketType.Play.Server.ENTITY_EFFECT) {
-                    event.getUser().sendMessage("Cope!");
                 }
             }
         };
