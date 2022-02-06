@@ -303,7 +303,7 @@ public final class SpigotReflectionUtil {
         if (entityPlayer == null) {
             return null;
         }
-        ReflectionObject wrappedEntityPlayer = new ReflectionObject(entityPlayer);
+        ReflectionObject wrappedEntityPlayer = new ReflectionObject(entityPlayer, ENTITY_PLAYER_CLASS);
         return wrappedEntityPlayer.readObject(0, SpigotReflectionUtil.PLAYER_CONNECTION_CLASS);
     }
 
@@ -322,6 +322,7 @@ public final class SpigotReflectionUtil {
         try {
             return wrapper.readObject(0, NETWORK_MANAGER_CLASS);
         } catch (Exception ex) {
+            //Don't ask me why I do this, but this is terrible.
             wrapper = new ReflectionObject(playerConnection);
             try {
                 return wrapper.readObject(0, NETWORK_MANAGER_CLASS);
@@ -339,7 +340,7 @@ public final class SpigotReflectionUtil {
         if (networkManager == null) {
             return null;
         }
-        ReflectionObject wrapper = new ReflectionObject(networkManager);
+        ReflectionObject wrapper = new ReflectionObject(networkManager, NETWORK_MANAGER_CLASS);
         return wrapper.readObject(0, CHANNEL_CLASS);
     }
 
