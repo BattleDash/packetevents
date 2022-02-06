@@ -1,7 +1,6 @@
 plugins {
     id 'java-library'
     id 'maven-publish'
-    id 'com.github.johnrengelman.shadow' version '7.1.0'
 }
 
 group = 'com.github.retrooper'
@@ -10,21 +9,9 @@ version = '2.0.0'
 repositories {
     mavenCentral()
     maven { url 'https://jitpack.io' }
-
-    maven {
-        url 'https://hub.spigotmc.org/nexus/content/repositories/snapshots/'
-    }
-
-    maven {
-        url 'https://nexus.funkemunky.cc/content/repositories/releases/'
-    }
-
-    maven {
-        url 'https://repo.viaversion.com/'
-    }
-}
-shadowJar {
-    minimize()
+    maven { url 'https://hub.spigotmc.org/nexus/content/repositories/snapshots/' }
+    maven { url 'https://nexus.funkemunky.cc/content/repositories/releases/' }
+    maven { url 'https://repo.viaversion.com/' }
 }
 
 dependencies {
@@ -72,16 +59,4 @@ publishing {
 
 tasks.withType(JavaCompile) {
     options.encoding = 'UTF-8'
-}
-
-tasks.jar.configure {
-    classifier = 'default'
-}
-
-tasks.shadowJar.configure {
-    classifier = null
-}
-
-configurations.all {
-    resolutionStrategy.cacheChangingModulesFor 0, 'seconds'
 }
