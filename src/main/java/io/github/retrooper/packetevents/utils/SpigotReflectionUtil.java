@@ -65,7 +65,7 @@ public final class SpigotReflectionUtil {
             LEVEL_ENTITY_GETTER_CLASS, PERSISTENT_ENTITY_SECTION_MANAGER_CLASS;
 
     //Netty classes
-    public static Class<?> CHANNEL_CLASS, BYTE_BUF_CLASS, BYTE_TO_MESSAGE_DECODER, MESSAGE_TO_BYTE_ENCODER;;
+    public static Class<?> CHANNEL_CLASS, BYTE_BUF_CLASS, BYTE_TO_MESSAGE_DECODER, MESSAGE_TO_BYTE_ENCODER;
 
     //Fields
     public static Field ENTITY_PLAYER_PING_FIELD, ENTITY_BOUNDING_BOX_FIELD, BYTE_BUF_IN_PACKET_DATA_SERIALIZER;
@@ -233,6 +233,10 @@ public final class SpigotReflectionUtil {
             }
         }
         return MINECRAFT_SERVER_CONNECTION_INSTANCE;
+    }
+
+    public static double getTPS() {
+        return recentTPS()[0];
     }
 
     public static double[] recentTPS() {
