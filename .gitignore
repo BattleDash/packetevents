@@ -1,6 +1,4 @@
 .idea
 .gradle
 .github
-/spigot/build/
 /build/
-/spigot/src/main/spigot.main.iml
