@@ -1,6 +1,7 @@
 plugins {
     id 'java-library'
     id 'maven-publish'
+    id 'com.github.johnrengelman.shadow' version '7.1.0'
 }
 
 group = 'com.github.retrooper'
@@ -12,6 +13,10 @@ repositories {
     maven { url 'https://hub.spigotmc.org/nexus/content/repositories/snapshots/' }
     maven { url 'https://nexus.funkemunky.cc/content/repositories/releases/' }
     maven { url 'https://repo.viaversion.com/' }
+}
+
+shadowJar {
+    minimize()
 }
 
 dependencies {
