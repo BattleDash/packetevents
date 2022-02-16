@@ -46,3 +46,11 @@ jobs:
         with:
           name: packetevents-bungeecord-2.0-build.jar
           path: bungeecord/build/libs
+
+      - name: Publish to GitHub Packages
+        uses: gradle/gradle-build-action@v1
+        with:
+          arguments: publish
+        env:
+          USERNAME: ${{ github.actor }}
+          TOKEN: ${{ secrets.GITHUB_TOKEN }}
