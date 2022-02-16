@@ -141,7 +141,7 @@ public final class SpigotReflectionUtil {
         PLAYER_CONNECTION_CLASS = getServerClass("TBD", "PlayerConnection");
         SERVER_CONNECTION_CLASS = getServerClass("server.network.ServerGamePacketListenerImpl", "ServerConnection");
         NETWORK_MANAGER_CLASS = getServerClass("network.Connection", "NetworkManager");
-        MOB_EFFECT_LIST_CLASS = getServerClass("world.effect.MobEffectList", "MobEffectList");
+        MOB_EFFECT_LIST_CLASS = getServerClass("world.effect.MobEffect", "MobEffectList");
         NMS_ITEM_CLASS = getServerClass("world.item.Item", "Item");
         DEDICATED_SERVER_CLASS = getServerClass("server.dedicated.DedicatedServer", "DedicatedServer");
         WORLD_SERVER_CLASS = getServerClass("server.level.ServerLevel", "WorldServer");
