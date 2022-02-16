@@ -135,7 +135,7 @@ public final class SpigotReflectionUtil {
         NMS_ITEM_STACK_CLASS = getServerClass("world.item.ItemStack", "ItemStack");
         NMS_IMATERIAL_CLASS = getServerClass("world.level.IMaterial", "IMaterial");
         NMS_ENTITY_CLASS = getServerClass("world.entity.Entity", "Entity");
-        ENTITY_PLAYER_CLASS = getServerClass("server.level.EntityPlayer", "EntityPlayer");
+        ENTITY_PLAYER_CLASS = getServerClass("server.level.ServerPlayer", "EntityPlayer");
         BOUNDING_BOX_CLASS = getServerClass("world.phys.AxisAlignedBB", "AxisAlignedBB");
         ENTITY_HUMAN_CLASS = getServerClass("world.entity.player.EntityHuman", "EntityHuman");
         PLAYER_CONNECTION_CLASS = getServerClass("server.network.PlayerConnection", "PlayerConnection");
